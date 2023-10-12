@@ -14,6 +14,8 @@ include('doctor/includes/dbconnection.php');
  $message=$_POST['message'];
  $aptnumber=mt_rand(100000000, 999999999);
  $cdate=date('Y-m-d');
+//  var_dump($doctorlist);
+//  die;
 
 if($appdate<=$cdate){
        echo '<script>alert("Appointment date must be greater than todays date")</script>';
@@ -175,7 +177,7 @@ foreach($results as $row)
                                 
                                 <h2 class="text-center mb-lg-3 mb-2">Book an appointment</h2>
                             
-                                <form role="form" method="post">
+                                <form role="form" name='booking' method="post">
                                     <div class="row">
                                         <div class="col-lg-6 col-12">
                                             <input type="text" name="name" id="name" class="form-control" placeholder="Full name" required='true'>
@@ -216,8 +218,8 @@ while($row =$stmt->fetch()) {
 
 
     <div class="col-lg-6 col-12">
-<select name="doctorlist" id="doctorlist" class="form-control">
-<option value="">Select Doctor</option>
+<select name="doctorlist" id="doctorlist" class="form-control" required>
+<option value="0">Select Doctor</option>
 </select>
 </div>
 
@@ -241,6 +243,12 @@ while($row =$stmt->fetch()) {
             </section>
         </main>
         <?php include_once('includes/footer.php');?>
+        <script>
+    //   document.booking.addEventListener('submit',function(e){
+    //     e.preventDefault();
+    //     console.log(e)
+    //   })
+        </script>
         <!-- JAVASCRIPT FILES -->
         <script src="js/jquery.min.js"></script>
         <script src="js/bootstrap.bundle.min.js"></script>
