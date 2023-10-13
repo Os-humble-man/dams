@@ -48,7 +48,7 @@ echo "<script>window.location.href ='index.php'</script>";
 <!doctype html>
 <html lang="en">
     <head>
-        <title>Doctor Appointment Management System || Home Page</title>
+        <title>GestionRdvMed </title>
 
         <!-- CSS FILES -->        
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -230,7 +230,7 @@ while($row =$stmt->fetch()) {
                                         </div>
 
                                         <div class="col-lg-3 col-md-4 col-6 mx-auto">
-                                            <button type="submit" class="form-control" name="submit" id="submit-button">Book Now</button>
+                                            <button type="submit" class="form-control" name="submit" id="submit-button">Prendre RDV</button>
                                         </div>
                                     </div>
                                 </form>
